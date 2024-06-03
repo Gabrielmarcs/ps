@@ -2,7 +2,7 @@ package br.com.api.backend.modelo;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,15 +18,8 @@ import lombok.Setter;
 public class ConsultaModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(nullable = false)
-    private String mesAno;
-
-    @Column(nullable = false)
+    private Long id;
     private String codIbge;
-
-    @Column(nullable = false)
+    private String mesAno;
     private LocalDateTime log;
-
 }
