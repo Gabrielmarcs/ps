@@ -1,6 +1,12 @@
 function Formulario() {
+
     return (
-        <h1>Formulario</h1>
+        <form>
+            <input type="text" name="codIbge" placeholder='código ibge'/>
+            <input type="month" name="data" placeholder='mes-ano'/>
+
+            <input type="button" value="Consultar"/>
+        </form>
     )
 }
 
