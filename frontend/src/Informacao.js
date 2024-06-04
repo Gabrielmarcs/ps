@@ -1,20 +1,28 @@
-function Informacao() {
+import React from 'react';
+
+function Informacao({ dados }) {
+    if (!Array.isArray(dados)) {
+        return null;
+    }
+
     return (
-        <table className='table'>
+        <table className="table">
             <thead>
                 <tr>
                     <th>Município</th>
-                    <th>N° de pessoas beneficiadas</th>
-                    <th>Valor total</th>
+                    <th>N° de Pessoas Beneficiadas</th>
+                    <th>Valor Total</th>
                 </tr>
             </thead>
-
             <tbody>
-                <td></td>
-                <td></td>
-                <td></td>
+                {dados.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.municipio.nomeIBGE}</td>
+                        <td>{item.quantidadeBeneficiados}</td>
+                        <td>{item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                    </tr>
+                ))}
             </tbody>
-
         </table>
     );
 }

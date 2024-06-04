@@ -1,3 +1,7 @@
+*{
+  background-color: rgb(183, 194, 183);
+}
+
 form{
   width: 500px;
   margin: 30px auto;
@@ -6,4 +10,19 @@ form{
 
 form input{
   margin-bottom: 5px;
+}
+
+table{
+  text-align: center;
+}
+
+label{
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+h1{
+  text-align: center;
+  margin: 30px auto;
+  font-family: sans-serif bold;
 }
