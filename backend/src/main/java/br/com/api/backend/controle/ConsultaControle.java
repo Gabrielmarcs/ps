@@ -15,7 +15,7 @@ public class ConsultaControle {
     private ConsultaServico cs;
 
     @GetMapping("/beneficios")
-    public String consultarBeneficios(@RequestParam String mesAno, @RequestParam String codIbge) {
-        return cs.consultarBeneficios(mesAno, codIbge);
+    public String consulta(@RequestParam String mesAno, @RequestParam String codIbge) {
+        return cs.consultarBeneficio(mesAno, codIbge);
     }
 }
