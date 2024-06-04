@@ -4,7 +4,7 @@ import Informacao from './Informacao';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Formulario/>
       <Informacao/>
     </div>

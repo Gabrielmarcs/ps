@@ -1,6 +1,6 @@
 function Informacao() {
     return (
-        <table>
+        <table className='table'>
             <thead>
                 <tr>
                     <th>Município</th>
