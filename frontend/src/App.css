@@ -2,6 +2,11 @@
   background-color: rgb(183, 194, 183);
 }
 
+p{
+  text-align: center;
+  margin: 30px auto;
+}
+
 form{
   width: 500px;
   margin: 30px auto;

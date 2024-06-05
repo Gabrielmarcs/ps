@@ -9,11 +9,11 @@ function Formulario() {
     const [erroConsulta, setErroConsulta] = useState('');
 
     const handleCodIbgeChange = (e) => {
-        const value = e.target.value;
+        const v = e.target.value;
         const regex = /^\d*$/;
 
-        if (regex.test(value)) {
-            setCodIbge(value);
+        if (regex.test(v)) {
+            setCodIbge(v);
         }
     };
 
@@ -27,13 +27,13 @@ function Formulario() {
         }
     };
 
-    const formatMesAnoForApi = (mesAno) => {
+    const formatar = (mesAno) => {
         const [mes, ano] = mesAno.split('/');
         return ano + mes;
     };
 
     const consultar = () => {
-        axios.get(`http://localhost:8080/api/consulta/beneficios?mesAno=${formatMesAnoForApi(mesAno)}&codIbge=${codIbge}`)
+        axios.get(`http://localhost:8080/api/consulta/beneficios?mesAno=${formatar(mesAno)}&codIbge=${codIbge}`)
             .then(response => {
                 console.log('Dados recebidos da API:', response.data);
                 setDados(response.data);
