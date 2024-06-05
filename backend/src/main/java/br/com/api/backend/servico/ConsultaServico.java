@@ -35,6 +35,10 @@ public class ConsultaServico {
             ResponseEntity<String> response = rt.exchange(apiUrl, HttpMethod.GET, entity, String.class);
             String rp =  response.getBody();
 
+            if ("[]".equals(rp) || rp == null || rp.isEmpty()) {
+                return "Nenhum dado encontrado para código " + codIbge + " e mês/ano " + mesAno;
+            }
+
             LogModelo lm = new LogModelo();
             lm.setTempo(LocalDateTime.now());
             lm.setMensagem("Sucesso consulta de " + codIbge +" "+ mesAno.substring(4) + "/" + mesAno.substring(0,4));
