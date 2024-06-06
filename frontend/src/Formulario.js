@@ -35,9 +35,14 @@ function Formulario() {
     const consultar = () => {
         axios.get(`http://localhost:8080/api/consulta/beneficios?mesAno=${formatar(mesAno)}&codIbge=${codIbge}`)
             .then(response => {
-                console.log('Dados recebidos da API:', response.data);
-                setDados(response.data);
-                setErroConsulta('');
+                if(response.data == "Nenhum dado encontrado para código informado"){
+                    setErroConsulta(response.data);
+                    setDados([]);
+                }else{
+                    setDados(response.data);
+                    setErroConsulta('');
+                }
+                
             })
             .catch(error => {
                 console.error('Erro ao consultar os dados', error);

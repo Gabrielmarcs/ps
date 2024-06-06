@@ -36,7 +36,7 @@ public class ConsultaServico {
             String rp =  response.getBody();
 
             if ("[]".equals(rp) || rp == null || rp.isEmpty()) {
-                return "Nenhum dado encontrado para código " + codIbge + " e mês/ano " + mesAno;
+                return "Nenhum dado encontrado para código informado";
             }
 
             LogModelo lm = new LogModelo();
