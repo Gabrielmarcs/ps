@@ -33,6 +33,17 @@ function Formulario() {
     };
 
     const consultar = () => {
+        if (codIbge.length !== 7) {
+            setErroConsulta('Código IBGE deve conter exatamente 7 dígitos.');
+            return;
+        }
+
+        const [mes, ano] = mesAno.split('/');
+        if (parseInt(mes) < 1 || parseInt(mes) > 12 || ano.length !== 4 || parseInt(ano) < 1900 || parseInt(ano) > new Date().getFullYear()) {
+            setErroConsulta('Mês/Ano inválido. Por favor, insira no formato MM/AAAA.');
+            return;
+        }
+        
         axios.get(`http://localhost:8080/api/consulta/beneficios?mesAno=${formatar(mesAno)}&codIbge=${codIbge}`)
             .then(response => {
                 if(response.data == "Nenhum dado encontrado para código informado"){
@@ -73,6 +84,7 @@ function Formulario() {
                         placeholder='Código IBGE'
                         value={codIbge}
                         onChange={handleCodIbgeChange}
+                        maxLength="7"
                     />
                 </div>
                 <div className="form-group">
