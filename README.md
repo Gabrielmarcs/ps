@@ -9,12 +9,12 @@ Abaixo estão algumas das principais tecnologias e suas versões:
 
 ## Estrutura de Diretório
 
-./raiz
+- /raiz
     - ├── backend/
-          - ├── controle/
-          - ├── modelo/
-          - ├── repositorio/
-          - ├── servico/
+        - ├── controle/
+        - ├── modelo/
+        - ├── repositorio/
+        - ├── servico/
     - ├── frontend/
     - ├── readme.md
 
